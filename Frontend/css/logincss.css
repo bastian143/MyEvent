@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px
+    font_family: roboto;
+}
+
+body{
+    padding: 20px;
+}
+
+p, h2{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container{
+    width: min(460px, 100%);
+    background: #fff;
+    border: 1px solid #e2e8f6;
+    border-radius: 18px;
+    padding: 1.4rem;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+
+}
+
+ h1{
+    color: rgb(37, 207, 4);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+ }
+
+ input{
+    border-radius: 8px;
+    margin: 10px;
+    padding: 5px;
+    
+ }
+
+ a{
+    color: blue;
+    text-decoration: none;
+    trantition: 0.1s;
+ }
+
+ a:hover{
+    color: rgb(0, 0, 0);
+ }
