@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>MyEvent Semarang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 240px;
+            height: 100vh;
+            background: #020617;
+            padding: 25px;
+            border-right: 1px solid #1e293b;
+        }
+
+        .sidebar h2 {
+            color: #facc15;
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #cbd5f5;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #facc15;
+            padding-left: 5px;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .header h1 {
+            color: #facc15;
+            margin-bottom: 20px;
+        }
+
+        /* Search */
+        .search input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            background: #1e293b;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #020617;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #facc15;
+        }
+
+        .card h3 {
+            color: #facc15;
+        }
+
+        /* Event List */
+        .event-list {
+            margin-top: 30px;
+        }
+
+        .event {
+            background: #020617;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .event:hover {
+            border-color: #facc15;
+        }
+
+        .event h4 {
+            margin: 0;
+            color: white;
+        }
+
+        .event p {
+            margin: 5px 0;
+            color: #94a3b8;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #facc15;
+            color: black;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>MyEvent</h2>
+        <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-calendar"></i> Event</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+        <a href="#"><i class="fas fa-user"></i> Profil</a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <div class="header">
+            <h1>Event di Semarang</h1>
+        </div>
+
+        <!-- Search -->
+        <div class="search">
+            <input type="text" placeholder="Cari event...">
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Event</h3>
+                <p>25</p>
+            </div>
+
+            <div class="card">
+                <h3>Event Hari Ini</h3>
+                <p>5</p>
+            </div>
+
+            <div class="card">
+                <h3>Event Gratis</h3>
+                <p>10</p>
+            </div>
+        </div>
+
+        <!-- Event List -->
+        <div class="event-list">
+            <h2>Daftar Event</h2>
+
+            <div class="event">
+                <h4>Festival Kota Lama</h4>
+                <p>📍 Kota Lama Semarang</p>
+                <p>📅 20 Mei 2026</p>
+                <span class="badge">Gratis</span>
+            </div>
+
+            <div class="event">
+                <h4>Semarang Music Fest</h4>
+                <p>📍 Simpang Lima</p>
+                <p>📅 25 Mei 2026</p>
+                <span class="badge">Berbayar</span>
+            </div>
+
+            <div class="event">
+                <h4>Workshop UI/UX</h4>
+                <p>📍 Universitas Diponegoro</p>
+                <p>📅 28 Mei 2026</p>
+                <span class="badge">Gratis</span>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
