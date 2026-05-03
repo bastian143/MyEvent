@@ -1,11 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detail Event MyEvent</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f5f6fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .top-section {
+            display: flex;
+            gap: 30px;
+        }
+
+        .image-box img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .info-box {
+            flex: 1;
+        }
+
+        .info-box h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #ff7a00;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .meta p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: #ff7a00;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #ffe0c2;
+            color: #ff7a00;
+            margin-left: 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .bottom-section {
+            margin-top: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            border-bottom: 3px solid #ff7a00;
+            color: #ff7a00;
+            font-weight: bold;
+        }
+
+        .content {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .content h3 {
+            margin-top: 20px;
+            color: #ff7a00;
+        }
+
+        .content ul {
+            margin-left: 20px;
+        }
+    </style>
+
 </head>
 <body>
-    
+
+<div class="container">
+
+    <!-- TOP SECTION -->
+    <div class="top-section">
+        <div class="image-box">
+            <img src="https://via.placeholder.com/400x300" alt="Event">
+        </div>
+
+        <div class="info-box">
+            <h1>Semarang Music Festival 2026</h1>
+            <div class="price">Rp 150.000</div>
+
+            <div class="meta">
+                <p>📍 Lokasi: Semarang</p>
+                <p>📅 Tanggal: 20 Juni 2026</p>
+                <p>⏰ Waktu: 19.00 WIB</p>
+            </div>
+
+            <button class="btn btn-primary">Pesan Tiket</button>
+            <button class="btn btn-secondary">Simpan Event</button>
+        </div>
+    </div>
+
+    <!-- BOTTOM SECTION -->
+    <div class="bottom-section">
+        <div class="tabs">
+            <div class="tab active">Deskripsi</div>
+            <div class="tab">Detail</div>
+        </div>
+
+        <div class="content">
+
+            <h3>🎉 Tentang Event</h3>
+            <p>
+                Semarang Music Festival 2026 adalah festival musik tahunan terbesar di kota Semarang
+                yang menghadirkan berbagai musisi ternama dari dalam dan luar negeri. 
+                Event ini dirancang untuk memberikan pengalaman hiburan terbaik dengan konsep 
+                panggung megah, tata cahaya spektakuler, dan kualitas audio premium.
+            </p>
+
+            <h3>✨ Highlight Event</h3>
+            <ul>
+                <li>Penampilan artis nasional & internasional</li>
+                <li>Stage lighting & sound system kelas festival</li>
+                <li>Area kuliner dan food festival</li>
+                <li>Spot foto instagramable</li>
+                <li>Merchandise resmi event</li>
+            </ul>
+
+            <h3>📍 Detail Acara</h3>
+            <ul>
+                <li><strong>Lokasi:</strong> Lapangan Simpang Lima, Semarang</li>
+                <li><strong>Tanggal:</strong> 20 Juni 2026</li>
+                <li><strong>Waktu:</strong> 19.00 WIB - Selesai</li>
+            </ul>
+
+            <h3>🎟️ Kategori Tiket</h3>
+            <ul>
+                <li><strong>Reguler:</strong> Akses area umum</li>
+                <li><strong>VIP:</strong> Area depan panggung + fasilitas khusus</li>
+                <li><strong>VVIP:</strong> Lounge eksklusif + free merchandise</li>
+            </ul>
+
+            <h3>⚠️ Ketentuan</h3>
+            <ul>
+                <li>Tiket yang sudah dibeli tidak dapat dikembalikan</li>
+                <li>Wajib menunjukkan e-ticket saat masuk</li>
+                <li>Dilarang membawa barang berbahaya</li>
+                <li>Ikuti aturan panitia selama acara berlangsung</li>
+            </ul>
+
+            <h3>📞 Informasi Tambahan</h3>
+            <p>
+                Untuk informasi lebih lanjut, silakan hubungi:
+                <strong>myevent@gmail.com</strong>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>

@@ -1,27 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Event</title>
-    <link rel="stylesheet" href="../Frontend/css/logincss.css">
+    <title>Login MyEvent</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #ff7a00;
+        }
+
+        .login-box h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .login-box h3 {
+            margin-bottom: 5px;
+            font-weight: normal;
+            color: #555;
+        }
+
+        .login-box h3 span {
+            color: #ff7a00;
+            font-weight: bold;
+        }
+
+        .login-box p {
+            margin-bottom: 20px;
+            color: #777;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ff7a00;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255,122,0,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #ff7a00;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #e66a00;
+        }
+
+        .register {
+            margin-top: 15px;
+        }
+
+        .register a {
+            color: #ff7a00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
 </head>
 <body>
-    <div class="container">
-        <div class="sambutan">
-            <h1>Login</h1>
-            <h2>Selamat datang di MyEvent</h2>
-            <p>Masuk ke Akunmu</p>
-        </div>
 
-        <form class="input" action="/login" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
+<div class="login-container">
+    <div class="login-box">
+        <h1>Login</h1>
+        <h3>Selamat datang di <span>MyEvent</span></h3>
+        <p>Masuk ke akunmu</p>
+
+        <form>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" placeholder="Masukkan username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="Masukkan password" required>
+            </div>
+
             <button type="submit">Login</button>
         </form>
-        <p>Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+
+ <p class="register">
+    Belum punya akun? <a href="register.html">Daftar di sini</a>
+</p>
     </div>
+</div>
+
 </body>
 </html>

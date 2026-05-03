@@ -1,118 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Event</title>
+    <title>Register MyEvent</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            height: 100vh;
+            background: #f5f6fa;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
 
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 400px;
+        .register-container {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .register-box {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             text-align: center;
+            border-top: 5px solid #ff7a00;
         }
 
-        h1 {
-            color: #32CD32; 
+        .register-box h1 {
             margin-bottom: 10px;
+            color: #333;
         }
 
-        h2 {
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        p.subtitle {
+        .register-box h3 {
+            margin-bottom: 5px;
+            font-weight: normal;
             color: #555;
-            margin-bottom: 25px;
         }
 
-        .form-group {
+        .register-box h3 span {
+            color: #ff7a00;
+            font-weight: bold;
+        }
+
+        .register-box p {
+            margin-bottom: 20px;
+            color: #777;
+        }
+
+        .input-group {
             text-align: left;
             margin-bottom: 15px;
         }
 
-        label {
-            display: inline-block;
-            width: 140px; 
-            font-size: 18px;
+        .input-group label {
+            font-size: 14px;
+            color: #333;
         }
 
-        input {
-            width: 200px;
-            padding: 8px;
-            border: 1px solid #000;
-            border-radius: 10px; 
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ff7a00;
             outline: none;
+            box-shadow: 0 0 5px rgba(255,122,0,0.3);
         }
 
-               button {
-            background-color: #efefef;
-            border: 1px solid #767676;
-            padding: 5px 15px;
-            border-radius: 4px;
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #ff7a00;
+            color: white;
+            border-radius: 8px;
             cursor: pointer;
-            margin-top: 20px;
+            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
         }
 
         button:hover {
-            background-color: #e5e5e5;
+            background: #e66a00;
         }
 
-        .footer-link {
-            margin-top: 20px;
-            font-size: 16px;
+        .login {
+            margin-top: 15px;
         }
 
-        .footer-link a {
-            color: blue;
+        .login a {
+            color: #ff7a00;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
         }
     </style>
+
 </head>
 <body>
-    <div class="container">
+
+<div class="register-container">
+    <div class="register-box">
         <h1>Register</h1>
-        <h2>Selamat datang di MyEvent</h2>
-        <p class="subtitle">Buat Akun Barumu</p>
+        <h3>Bergabung di <span>MyEvent</span></h3>
+        <p>Buat akun baru</p>
 
-        <form action="/register" method="post">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+        <form>
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama lengkap" required>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="Masukkan email" required>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" placeholder="Masukkan username" required>
             </div>
 
-            <div class="form-group">
-                <label for="confirm_password">Confirm:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="Masukkan password" required>
             </div>
 
-            <button type="submit">Register</button>
+            <button type="submit">Daftar</button>
         </form>
 
-        <p class="footer-link">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+        <p class="login">
+            Sudah punya akun? <a href="login.html">Login</a>
+        </p>
     </div>
+</div>
+
 </body>
 </html>
