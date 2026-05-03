@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Cari Lomba - MyEvent</title>
+</head>
+<link rel="stylesheet" href="/Frontend/src/Pages/dasboardUser/dasboardUser.css">
+<body>
+    <header>
+        <h1>Eksplorasi Lomba</h1>
+        <li><a href="/Frontend/src/Pages/homePage.html">Home Page</a></li>
+        <li><a href="/Frontend/src/Pages/dasboardUser/dasboardUser.html">Dasboard</a></li>
+        <li><a href="/Frontend/src/Pages/dasboardUser/lombaku.html">Lombaku</a></li>
+        <li><a href="/Frontend/src/Pages/dasboardUser/cariTim.html">Cari Tim</a></li>
+        <li><a href="/Frontend/src/Pages/dasboardUser/sertifikat.html">Sertifikat</a></li>
+        <li><a href="/Frontend/src/Pages/dasboardUser/pengaturanProfile.html">Pengaturan Profil</a></li>
+    </header>
+
+    <main>
+        <!-- Form Pencarian & Filter -->
+        <section id="filter">
+            <form>
+                <input type="text" placeholder="Cari nama lomba...">
+                <select>
+                    <option value="">Semua Kategori</option>
+                    <option value="informatika">Informatika</option>
+                    <option value="desain">Desain</option>
+                    <option value="ekonomi">Ekonomi</option>
+                </select>
+                <button type="submit">Cari</button>
+            </form>
+        </section>
+
+        <br>
+
+        <!-- Daftar Hasil Lomba -->
+        <section id="daftar-lomba">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Penyelenggara</th>
+                        <th>Nama Lomba</th>
+                        <th>Kategori</th>
+                        <th>Deadline</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data lomba dari database akan muncul di sini -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
