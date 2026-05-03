@@ -2,200 +2,282 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>MyEvent Semarang</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
+    <title>MyEvent - Temukan Event Terbaik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            background: #0f172a;
-            color: #e5e7eb;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 240px;
-            height: 100vh;
-            background: #020617;
-            padding: 25px;
-            border-right: 1px solid #1e293b;
-        }
-
-        .sidebar h2 {
-            color: #facc15;
-            margin-bottom: 40px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: #cbd5f5;
-            text-decoration: none;
-            margin: 15px 0;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            color: #facc15;
-            padding-left: 5px;
-        }
-
-        /* Main */
-        .main {
-            flex: 1;
-            padding: 30px;
-        }
-
-        .header h1 {
-            color: #facc15;
-            margin-bottom: 20px;
-        }
-
-        /* Search */
-        .search input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: none;
-            background: #1e293b;
-            color: white;
-            margin-bottom: 25px;
-        }
-
-        /* Cards */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #020617;
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid #1e293b;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #facc15;
-        }
-
-        .card h3 {
-            color: #facc15;
-        }
-
-        /* Event List */
-        .event-list {
-            margin-top: 30px;
-        }
-
-        .event {
-            background: #020617;
-            padding: 18px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #1e293b;
-            transition: 0.3s;
-        }
-
-        .event:hover {
-            border-color: #facc15;
-        }
-
-        .event h4 {
-            margin: 0;
-            color: white;
-        }
-
-        .event p {
-            margin: 5px 0;
-            color: #94a3b8;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 5px 12px;
-            background: #facc15;
-            color: black;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
+        body { font-family: 'Inter', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50">
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>MyEvent</h2>
-        <a href="#"><i class="fas fa-home"></i> Dashboard</a>
-        <a href="#"><i class="fas fa-calendar"></i> Event</a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
-        <a href="#"><i class="fas fa-user"></i> Profil</a>
-    </div>
-
-    <!-- Main -->
-    <div class="main">
-        <div class="header">
-            <h1>Event di Semarang</h1>
+    <!-- HEADER WITH CATEGORIES FILTER -->
+    <header class="bg-white/95 backdrop-blur-xl sticky top-0 z-50 shadow-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- TOP BAR: Logo + Search + Login -->
+            <div class="flex justify-between items-center py-4">
+                <!-- LOGO -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-14 h-14 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-3xl font-bold text-white">🎉</span>
+                    </div>
+                    <div>
+                        <h1 class="font-poppins font-bold text-2xl bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">MyEvent</h1>
+                        <p class="text-xs text-gray-500 font-medium">Event & Lomba #1</p>
+                    </div>
+                </div>
+                
+                <!-- SEARCH -->
+                <div class="relative hidden lg:block w-80">
+                    <input type="text" id="searchInput" placeholder="Cari 'lomba essay nasional'..." 
+                           class="w-full pl-14 pr-6 py-4 border-2 border-gray-200 rounded-3xl focus:ring-4 focus:ring-orange-200 focus:border-orange-400 shadow-lg text-lg transition-all duration-300">
+                    <svg class="w-7 h-7 text-gray-400 absolute left-5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                
+                <!-- LOGIN -->
+                <button class="px-8 py-4 bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold rounded-2xl hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-lg shadow-lg">
+                    Admin Login
+                </button>
+            </div>
+            
+            <!-- CATEGORIES FILTER BAR (SEBARIS UJUNG KE UJUNG) -->
+            <div class="border-t border-gray-100 pt-4 pb-6">
+                <div class="flex flex-wrap gap-2 justify-center lg:justify-start items-center overflow-x-auto pb-2 scrollbar-hide">
+                    <!-- Active Filter Indicator -->
+                    <div id="activeFilter" class="px-6 py-3 bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold rounded-2xl shadow-lg whitespace-nowrap transition-all duration-300">
+                        Semua Event
+                    </div>
+                    
+                    <!-- Filter Buttons -->
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-blue-100 hover:text-blue-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="all">
+                        🎯 Semua
+                    </button>
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-blue-100 hover:text-blue-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="essay">
+                        📝 Essay
+                    </button>
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-emerald-100 hover:text-emerald-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="olahraga">
+                        ⚽ Olahraga
+                    </button>
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-purple-100 hover:text-purple-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="seminar">
+                        🎤 Seminar
+                    </button>
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-orange-100 hover:text-orange-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="seni">
+                        🎨 Seni
+                    </button>
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-pink-100 hover:text-pink-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="tech">
+                        💻 Tech
+                    </button>
+                    <button class="category-filter px-6 py-3 font-semibold rounded-2xl hover:bg-indigo-100 hover:text-indigo-700 hover:shadow-md transition-all duration-300 whitespace-nowrap" data-category="prestasi">
+                        🏆 Prestasi
+                    </button>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <!-- Search -->
-        <div class="search">
-            <input type="text" placeholder="Cari event...">
+    <!-- HERO -->
+    <section class="pt-20 pb-24 bg-gradient-to-b from-orange-400/10 via-yellow-400/5 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-poppins font-bold text-5xl md:text-6xl lg:text-7xl text-gray-800 mb-6 leading-tight">
+                <span class="block">Temukan</span>
+                <span class="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent font-black">
+                    Event & Lomba
+                </span>
+                <span class="block text-4xl md:text-5xl lg:text-6xl">Terbaikmu!
+                </span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Lebih dari <span class="font-bold text-orange-500">500+</span> event essay, olahraga, seminar, dan workshop 
+                siap kamu ikuti!
+            </p>
+            <div class="flex flex-col lg:flex-row gap-4 justify-center items-center max-w-4xl mx-auto">
+                <div class="relative w-full lg:w-auto flex-1">
+                    <input type="text" id="heroSearch" placeholder="🔍 Ketik 'lomba essay' atau 'seminar AI'..." 
+                           class="w-full pl-20 pr-16 py-6 text-xl border-2 border-gray-200 rounded-3xl focus:ring-4 focus:ring-orange-200 focus:border-orange-400 shadow-2xl">
+                    <svg class="w-9 h-9 text-gray-400 absolute left-7 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2 px-8 py-6 bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold rounded-2xl text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                        Cari Event
+                    </button>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Cards -->
-        <div class="cards">
-            <div class="card">
-                <h3>Total Event</h3>
-                <p>25</p>
+    <!-- EVENT POPULER - DYNAMIC FILTER -->
+    <section class="py-24 bg-gradient-to-b from-gray-50/50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h3 class="font-poppins font-bold text-4xl md:text-5xl text-gray-800 mb-6">Event <span class="text-orange-500">Populer</span></h3>
+                <p class="text-xl md:text-2xl text-gray-600">Pilih kategori di atas untuk filter event!</p>
             </div>
-
-            <div class="card">
-                <h3>Event Hari Ini</h3>
-                <p>5</p>
+            
+            <!-- EVENTS GRID -->
+            <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- EVENTS WILL BE LOADED HERE BY JS -->
             </div>
-
-            <div class="card">
-                <h3>Event Gratis</h3>
-                <p>10</p>
+            
+            <!-- NO RESULTS -->
+            <div id="noResults" class="hidden text-center py-32">
+                <div class="w-32 h-32 bg-gray-100 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                    <span class="text-5xl">🔍</span>
+                </div>
+                <h4 class="font-poppins font-bold text-3xl text-gray-600 mb-4">Belum ada event</h4>
+                <p class="text-xl text-gray-500 mb-8">Coba kategori lain atau tunggu admin update</p>
+                <button class="px-12 py-6 bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold rounded-3xl text-xl hover:shadow-2xl">
+                    Reset Filter
+                </button>
             </div>
         </div>
+    </section>
 
-        <!-- Event List -->
-        <div class="event-list">
-            <h2>Daftar Event</h2>
+    <script>
+        // SAMPLE EVENTS DATA
+        const eventsData = [
+            { id: 1, title: "Lomba Essay Nasional 2024", category: "essay", date: "15-20 Jan 2024", location: "Online", price: "Rp50.000", quota: "75/100", color: "from-blue-400 to-purple-400" },
+            { id: 2, title: "Turnamen Futsal Antar Kampus", category: "olahraga", date: "25-27 Jan 2024", location: "Stadion UNPAD", price: "Rp75.000", quota: "12/16", color: "from-emerald-400 to-green-500" },
+            { id: 3, title: "Seminar AI & Machine Learning", category: "seminar", date: "10 Feb 2024", location: "Zoom", price: "Gratis", quota: "450/500", color: "from-purple-400 to-violet-500" },
+            { id: 4, title: "Lomba Desain Poster Lingkungan", category: "seni", date: "5-15 Feb 2024", location: "Online", price: "Rp25.000", quota: "88/100", color: "from-orange-400 to-amber-500" },
+            { id: 5, title: "Hackathon Web Development", category: "tech", date: "18-20 Feb 2024", location: "Hybrid", price: "Rp100.000", quota: "23/50", color: "from-pink-400 to-rose-500" },
+            { id: 6, title: "Award Prestasi Mahasiswa", category: "prestasi", date: "1 Mar 2024", location: "Ballroom Hotel", price: "Gratis", quota: "200/300", color: "from-indigo-400 to-blue-500" },
+            { id: 7, title: "Essay Kompetisi Hukum", category: "essay", date: "8-12 Feb 2024", location: "Online", price: "Rp30.000", quota: "92/100", color: "from-blue-400 to-purple-400" },
+            { id: 8, title: "Basket 3x3 Championship", category: "olahraga", date: "3 Feb 2024", location: "Lapangan GOR", price: "Rp40.000", quota: "14/20", color: "from-emerald-400 to-green-500" },
+        ];
 
-            <div class="event">
-                <h4>Festival Kota Lama</h4>
-                <p>📍 Kota Lama Semarang</p>
-                <p>📅 20 Mei 2026</p>
-                <span class="badge">Gratis</span>
-            </div>
+        // FILTER FUNCTION
+        function filterEvents(category) {
+            const eventsGrid = document.getElementById('eventsGrid');
+            const noResults = document.getElementById('noResults');
+            const activeFilter = document.getElementById('activeFilter');
+            
+            // Update active filter
+            activeFilter.textContent = category === 'all' ? 'Semua Event' : category.charAt(0).toUpperCase() + category.slice(1);
+            activeFilter.className = `px-6 py-3 bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold rounded-2xl shadow-lg whitespace-nowrap transition-all duration-300`;
+            
+            // Filter events
+            const filteredEvents = category === 'all' ? eventsData : eventsData.filter(event => event.category === category);
+            
+            // Clear grid
+            eventsGrid.innerHTML = '';
+            
+            if (filteredEvents.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            
+            // Render filtered events
+            filteredEvents.forEach(event => {
+                const eventCard = createEventCard(event);
+                eventsGrid.appendChild(eventCard);
+            });
+            
+            // Scroll to top of events
+            eventsGrid.scrollIntoView({ behavior: 'smooth' });
+        }
 
-            <div class="event">
-                <h4>Semarang Music Fest</h4>
-                <p>📍 Simpang Lima</p>
-                <p>📅 25 Mei 2026</p>
-                <span class="badge">Berbayar</span>
-            </div>
+        // CREATE EVENT CARD
+        function createEventCard(event) {
+            const card = document.createElement('div');
+            card.className = `group bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:scale-[1.02]`;
+            card.onclick = () => alert(`Detail Event: ${event.title}\n📅 ${event.date}\n📍 ${event.location}\n💰 ${event.price}`);
+            
+            card.innerHTML = `
+                <div class="h-56 bg-gradient-to-br ${event.color} relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute top-6 right-6">
+                        <span class="px-4 py-2 bg-white/95 backdrop-blur-sm text-gray-800 font-bold rounded-full text-sm shadow-lg">HOT</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <span class="inline-block px-4 py-2 bg-gradient-to-r ${event.color.replace('400', '100').replace('500', '100')} text-gray-800 font-semibold rounded-full text-sm mb-4 capitalize">
+                        ${event.category}
+                    </span>
+                    <h4 class="font-poppins font-bold text-2xl text-gray-800 mb-4 leading-tight group-hover:text-orange-500 transition-all duration-300 line-clamp-2">
+                        ${event.title}
+                    </h4>
+                    <div class="space-y-3 mb-8 text-gray-600">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-orange-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="font-medium">${event.date}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="font-medium">${event.location}</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-orange-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="font-bold text-lg text-gray-800">${event.price}</span>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 font-bold rounded-full text-sm">${event.quota}</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-orange-400 to-yellow-500 text-white py-5 px-8 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group-hover:from-orange-500 group-hover:to-yellow-600">
+                        Lihat Detail Event →
+                    </button>
+                </div>
+            `;
+            return card;
+        }
 
-            <div class="event">
-                <h4>Workshop UI/UX</h4>
-                <p>📍 Universitas Diponegoro</p>
-                <p>📅 28 Mei 2026</p>
-                <span class="badge">Gratis</span>
-            </div>
+        // EVENT LISTENERS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial load all events
+            filterEvents('all');
+            
+            // Category filter buttons
+            document.querySelectorAll('.category-filter').forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Remove active from all
+                    document.querySelectorAll('.category-filter').forEach(btn => {
+                        btn.classList.remove('bg-gradient-to-r', 'from-orange-400', 'to-yellow-500', 'text-white', 'shadow-lg');
+                        btn.classList.add('hover:bg-blue-100', 'hover:text-blue-700');
+                    });
+                    
+                    // Add active to clicked
+                    this.classList.add('bg-gradient-to-r', 'from-orange-400', 'to-yellow-500', 'text-white', 'shadow-lg');
+                    this.classList.remove('hover:bg-blue-100', 'hover:text-blue-700');
+                    
+                    filterEvents(category);
+                });
+            });
+            
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                const filtered = eventsData.filter(event => 
+                    event.title.toLowerCase().includes(query) || 
+                    event.category.includes(query)
+                );
+                renderSearchResults(filtered);
+            });
+        });
 
-        </div>
-    </div>
+        function renderSearchResults(events) {
+            const grid = document.getElementById('eventsGrid');
+            grid.innerHTML = '';
+            events.forEach(event => {
+                grid.appendChild(createEventCard(event));
+            });
+        }
+    </script>
 
 </body>
 </html>
