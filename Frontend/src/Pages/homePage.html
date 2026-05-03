@@ -41,7 +41,7 @@
                 
                 <!-- LOGIN -->
                 <button class="px-8 py-4 bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold rounded-2xl hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-lg shadow-lg">
-                    Admin Login
+                    <a href="login.html"> Login </a>
                 </button>
             </div>
             
@@ -139,7 +139,7 @@
 
     <script>
         // SAMPLE EVENTS DATA
-        const eventsData = [
+         const eventsData = [ 
             { id: 1, title: "Lomba Essay Nasional 2024", category: "essay", date: "15-20 Jan 2024", location: "Online", price: "Rp50.000", quota: "75/100", color: "from-blue-400 to-purple-400" },
             { id: 2, title: "Turnamen Futsal Antar Kampus", category: "olahraga", date: "25-27 Jan 2024", location: "Stadion UNPAD", price: "Rp75.000", quota: "12/16", color: "from-emerald-400 to-green-500" },
             { id: 3, title: "Seminar AI & Machine Learning", category: "seminar", date: "10 Feb 2024", location: "Zoom", price: "Gratis", quota: "450/500", color: "from-purple-400 to-violet-500" },
@@ -148,7 +148,7 @@
             { id: 6, title: "Award Prestasi Mahasiswa", category: "prestasi", date: "1 Mar 2024", location: "Ballroom Hotel", price: "Gratis", quota: "200/300", color: "from-indigo-400 to-blue-500" },
             { id: 7, title: "Essay Kompetisi Hukum", category: "essay", date: "8-12 Feb 2024", location: "Online", price: "Rp30.000", quota: "92/100", color: "from-blue-400 to-purple-400" },
             { id: 8, title: "Basket 3x3 Championship", category: "olahraga", date: "3 Feb 2024", location: "Lapangan GOR", price: "Rp40.000", quota: "14/20", color: "from-emerald-400 to-green-500" },
-        ];
+                ];
 
         // FILTER FUNCTION
         function filterEvents(category) {
@@ -184,57 +184,61 @@
         }
 
         // CREATE EVENT CARD
-        function createEventCard(event) {
-            const card = document.createElement('div');
-            card.className = `group bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:scale-[1.02]`;
-            card.onclick = () => alert(`Detail Event: ${event.title}\n📅 ${event.date}\n📍 ${event.location}\n💰 ${event.price}`);
-            
-            card.innerHTML = `
-                <div class="h-56 bg-gradient-to-br ${event.color} relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute top-6 right-6">
-                        <span class="px-4 py-2 bg-white/95 backdrop-blur-sm text-gray-800 font-bold rounded-full text-sm shadow-lg">HOT</span>
-                    </div>
+        // CREATE EVENT CARD
+    function createEventCard(event) {
+        const card = document.createElement('div');
+        card.className = `group bg-white rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:scale-[1.02]`;
+        
+        // Mengarahkan seluruh kartu ke halaman detail saat diklik
+        card.onclick = () => {
+            window.location.href = `detailEvent.html?id=${event.id}`;
+        };
+        
+        card.innerHTML = `
+            <div class="h-56 bg-gradient-to-br ${event.color} relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute top-6 right-6">
+                    <span class="px-4 py-2 bg-white/95 backdrop-blur-sm text-gray-800 font-bold rounded-full text-sm shadow-lg">HOT</span>
                 </div>
-                <div class="p-8">
-                    <span class="inline-block px-4 py-2 bg-gradient-to-r ${event.color.replace('400', '100').replace('500', '100')} text-gray-800 font-semibold rounded-full text-sm mb-4 capitalize">
-                        ${event.category}
-                    </span>
-                    <h4 class="font-poppins font-bold text-2xl text-gray-800 mb-4 leading-tight group-hover:text-orange-500 transition-all duration-300 line-clamp-2">
-                        ${event.title}
-                    </h4>
-                    <div class="space-y-3 mb-8 text-gray-600">
+            </div>
+            <div class="p-8">
+                <span class="inline-block px-4 py-2 bg-gradient-to-r ${event.color.replace('400', '100').replace('500', '100')} text-gray-800 font-semibold rounded-full text-sm mb-4 capitalize">
+                    ${event.category}
+                </span>
+                <h4 class="font-poppins font-bold text-2xl text-gray-800 mb-4 leading-tight group-hover:text-orange-500 transition-all duration-300 line-clamp-2">
+                    ${event.title}
+                </h4>
+                <div class="space-y-3 mb-8 text-gray-600">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-orange-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-medium">${event.date}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-medium">${event.location}</span>
+                    </div>
+                    <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <svg class="w-6 h-6 text-orange-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="font-medium">${event.date}</span>
+                            <span class="font-bold text-lg text-gray-800">${event.price}</span>
                         </div>
-                        <div class="flex items-center">
-                            <svg class="w-6 h-6 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="font-medium">${event.location}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <svg class="w-6 h-6 text-orange-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="font-bold text-lg text-gray-800">${event.price}</span>
-                            </div>
-                            <span class="px-3 py-1 bg-green-100 text-green-700 font-bold rounded-full text-sm">${event.quota}</span>
-                        </div>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 font-bold rounded-full text-sm">${event.quota}</span>
                     </div>
-                    <button class="w-full bg-gradient-to-r from-orange-400 to-yellow-500 text-white py-5 px-8 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group-hover:from-orange-500 group-hover:to-yellow-600">
-                        Lihat Detail Event →
-                    </button>
                 </div>
-            `;
-            return card;
-        }
-
+                <button class="w-full bg-gradient-to-r from-orange-400 to-yellow-500 text-white py-5 px-8 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group-hover:from-orange-500 group-hover:to-yellow-600">
+                    Lihat Detail Event →
+                </button>
+            </div>
+        `;
+        return card;
+    }
         // EVENT LISTENERS
         document.addEventListener('DOMContentLoaded', function() {
             // Initial load all events
