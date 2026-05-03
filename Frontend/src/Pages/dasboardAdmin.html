@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - MyEvent</title>
+    <link rel="stylesheet" href="..\Asset\css\DashAdmin.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>MyEvent</h2>
+    <a onclick="show('dashboard')">Dashboard</a>
+    <a onclick="show('events')">Event</a>
+    <a onclick="show('users')">User</a>
+    <a onclick="show('categories')">Kategori</a>
+    <a onclick="show('logs')">Log</a>
+</div>
+
+<div class="main">
+
+    <div id="dashboard">
+        <h1>Dashboard</h1>
+        <div class="grid">
+            <div class="card stat">
+                <h3>10</h3>
+                <p>Total Event</p>
+            </div>
+            <div class="card stat">
+                <h3>3</h3>
+                <p>Pending</p>
+            </div>
+            <div class="card stat">
+                <h3>5</h3>
+                <p>Approved</p>
+            </div>
+            <div class="card stat">
+                <h3>7</h3>
+                <p>User Aktif</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="events" style="display:none;">
+        <h1>Manajemen Event</h1>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Seminar AI</h3>
+                <p class="pending">Pending</p>
+                <button onclick="approve(this)" class="btn green">ACC</button>
+                <button onclick="reject(this)" class="btn orange">Reject</button>
+                <button onclick="remove(this)" class="btn red">Hapus</button>
+            </div>
+
+            <div class="card">
+                <h3>Workshop UI</h3>
+                <p class="approved">Approved</p>
+                <button onclick="remove(this)" class="btn red">Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="users" style="display:none;">
+        <h1>Manajemen User</h1>
+        <div class="grid">
+            <div class="card">
+                <p>Abil</p>
+                <button class="btn blue">Jadikan Admin</button>
+                <button class="btn red">Hapus</button>
+            </div>
+            <div class="card">
+                <p>Renlady</p>
+                <button class="btn orange">Blokir</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="categories" style="display:none;">
+        <h1>Kategori</h1>
+        <div class="card">
+            <p>Seminar</p>
+            <button class="btn red">Hapus</button>
+        </div>
+        <input type="text" placeholder="Kategori baru">
+        <button class="btn blue">Tambah</button>
+    </div>
+
+    <div id="logs" style="display:none;">
+        <h1>Log Aktivitas</h1>
+        <div class="card">ACC Seminar AI</div>
+        <div class="card">Hapus Workshop UI</div>
+    </div>
+
+</div>
+
+<script>
+function show(section) {
+    let all = ["dashboard","events","users","categories","logs"];
+    all.forEach(s => document.getElementById(s).style.display = "none");
+    document.getElementById(section).style.display = "block";
+}
+
+function approve(btn) {
+    let p = btn.parentElement.querySelector("p");
+    p.innerText = "Approved";
+    p.className = "approved";
+}
+
+function reject(btn) {
+    let p = btn.parentElement.querySelector("p");
+    p.innerText = "Rejected";
+    p.className = "rejected";
+}
+
+function remove(btn) {
+    btn.parentElement.remove();
+}
+</script>
+
+</body>
+</html>

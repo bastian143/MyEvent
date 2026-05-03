@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    background: #f5f6fa;
+}
+
+.sidebar {
+    width: 240px;
+    background: #111827;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sidebar a:hover {
+    background: #1f2937;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.green { background: #10b981; }
+.orange { background: #f59e0b; }
+.red { background: #ef4444; }
+.blue { background: #3b82f6; }
+
+.pending { color: #f59e0b; }
+.approved { color: #10b981; }
+.rejected { color: #ef4444; }
+
+input {
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
