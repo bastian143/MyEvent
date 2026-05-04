@@ -112,7 +112,15 @@
         }
     </style>
 
+    <script>
+        function register(e){
+            e.preventDefault();
+            window.location.href = "dasboardAdmin.html";
+        }
+    </script>
+
 </head>
+
 <body>
 
 <div class="register-container">
@@ -121,7 +129,7 @@
         <h3>Bergabung di <span>MyEvent</span></h3>
         <p>Buat akun baru</p>
 
-        <form>
+        <form onsubmit="register(event)">
             <div class="input-group">
                 <label>Nama Lengkap</label>
                 <input type="text" placeholder="Masukkan nama lengkap" required>
@@ -142,7 +150,7 @@
                 <input type="password" placeholder="Masukkan password" required>
             </div>
 
-            <button type="submit">Daftar</button>
+           <button type="submit">Daftar</button>
         </form>
 
         <p class="login">
