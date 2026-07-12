@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-surface text-slate-800 antialiased selection:bg-brand-500 selection:text-white;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm;
+    }
+    .glass-card {
+        @apply bg-white border border-slate-200 shadow-lg rounded-2xl;
+    }
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-amber-500;
+    }
+}
